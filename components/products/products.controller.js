@@ -2,8 +2,8 @@ const productsController = function ($scope, productsService, $location) {
   this.productsArray = [];
 
   this.getAllProducts = async () => {
-    const prods = await productsService.getProducts();
-    this.productsArray = prods.products;
+    const res = await productsService.getProducts();
+    this.productsArray = res.products;
     $scope.$apply();
   };
 
