@@ -1,16 +1,16 @@
 (function (angular) {
   "use strict";
-  angular.module("MiniECommerce", ["ngRoute"])
+  angular.module("MiniECommerce", ["elif", "ngRoute"])
     .config(function ($routeProvider) {
       $routeProvider
-        .when("", {
+        .when("/", {
           template: "<products></products>"
         })
         .when("/:id", {
-          template: ""
+          template: "<details></details>"
         })
         .otherwise({
-          redirectTo: ""
+          redirectTo: "/"
         })
     });
 })(window.angular);
