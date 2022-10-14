@@ -1,1 +1,22 @@
-<p>Products works</p>
+<div class="container mt-5 m-auto p-5">
+    <div class="row m-auto mb-5 pb-3">
+        <h1 class="display-2 text-center">Products List</h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div ng-repeat="prod in $ctrl.productsArray" class="col">
+            <div class="card h-100 border-dark mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Product: {{prod.name}}</h5>
+                    <p ng-if="!!prod.description" class="card-text"><i>Description:</i> {{prod.description}}</p>
+                    <p ng-if="!prod.description" class="card-text"><i>No available description</i></p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Product Available</small>
+                    <button type="button" class="btn btn-dark float-end" ng-click="$ctrl.goToDetails(prod.id)">More
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
