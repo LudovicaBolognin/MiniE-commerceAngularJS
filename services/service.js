@@ -1,7 +1,7 @@
 (function (angular) {
   angular.module("MiniECommerce")
-    .service("myService", ["$http", function ($http) {
-      this.getProducts = async function getAll() {
+    .service("productsService", ["$http", function ($http) {
+      this.getProducts = async () => {
         const response = await $http({
           method: "GET",
           url: "db.json"

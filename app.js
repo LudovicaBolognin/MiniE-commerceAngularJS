@@ -1,6 +1,6 @@
 (function (angular) {
   "use strict";
-  angular.module("MiniECommerce", ["elif", "ngRoute"])
+  angular.module("MiniECommerce", ["ngRoute"])
     .config(function ($routeProvider) {
       $routeProvider
         .when("/", {

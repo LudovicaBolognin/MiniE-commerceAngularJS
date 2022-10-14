@@ -1,9 +1,9 @@
-const productsController = function ($scope, myService, $location) {
-  this.arrayProducts = [];
+const productsController = function ($scope, productsService, $location) {
+  this.productsArray = [];
 
   this.getAllProducts = async () => {
-    const prods = await myService.getProducts();
-    this.arrayProducts = prods.products;
+    const prods = await productsService.getProducts();
+    this.productsArray = prods.products;
     $scope.$apply();
   };
 
