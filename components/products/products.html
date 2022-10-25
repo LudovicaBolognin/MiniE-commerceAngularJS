@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Product: {{prod.name}}</h5>
                     <p ng-if="!!prod.description" class="card-text"><i>Description:</i> {{prod.description}}</p>
-                    <p ng-if="!prod.description" class="card-text"><i>No available description</i></p>
+                    <p ng-if="!prod.description" class="card-text text-danger"><i>No available description</i></p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Product Available</small>

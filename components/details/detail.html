@@ -1,0 +1,23 @@
+<div class="mt-5 pt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Product: {{$ctrl.selectedProduct[0].name}}</h5>
+            </div>
+            <div class="modal-body">
+                <i>Description: </i>{{$ctrl.selectedProduct[0].description}}
+                <span ng-if="!$ctrl.selectedProduct[0].description" class="card-text text-danger"><i>No available description</i></span>
+                <p><b>Price: </b> {{$ctrl.selectedProduct[0].price | currency}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ng-click="$ctrl.onBack()">Go
+                    Back
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="$ctrl.onAddToCart($ctrl.selectedProduct[0])">Add
+                    to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
