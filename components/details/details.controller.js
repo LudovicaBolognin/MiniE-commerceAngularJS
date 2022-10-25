@@ -1,17 +1,17 @@
 const detailsController = function ($scope, productsService, $routeParams, $location) {
 
   this.productsArray = [];
-  this.selectedProduct = [];
+  this.product = [];
 
-  this.getSelectedProduct = async () => {
-    const product = await productsService.getProducts();
-    this.productsArray = product.products;
-    this.selectedProduct = this.productsArray.filter(ele => ele.id === +$routeParams.id);
+  this.loadProduct = async () => {
+    const response = await productsService.getProducts();
+    this.productsArray = response.products;
+    this.product = this.productsArray.filter(ele => ele.id === +$routeParams.id);
     $scope.$apply();
   }
 
   this.$onInit = () => {
-    this.getSelectedProduct();
+    this.loadProduct();
   }
 
   this.onBack = () => {

@@ -3,18 +3,19 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Product: {{$ctrl.selectedProduct[0].name}}</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Product: {{$ctrl.product[0].name}}</h5>
             </div>
             <div class="modal-body">
-                <i>Description: </i>{{$ctrl.selectedProduct[0].description}}
-                <span ng-if="!$ctrl.selectedProduct[0].description" class="card-text text-danger"><i>No available description</i></span>
-                <p><b>Price: </b> {{$ctrl.selectedProduct[0].price | currency}}</p>
+                <i>Description: </i>{{$ctrl.product[0].description}}
+                <span ng-if="!$ctrl.product[0].description"
+                      class="card-text text-danger"><i>No available description</i></span>
+                <p><b>Price: </b> {{$ctrl.product[0].price | currency}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ng-click="$ctrl.onBack()">Go
                     Back
                 </button>
-                <button type="button" class="btn btn-primary" ng-click="$ctrl.onAddToCart($ctrl.selectedProduct[0])">Add
+                <button type="button" class="btn btn-primary" ng-click="$ctrl.onAddToCart($ctrl.product[0])">Add
                     to Cart
                 </button>
             </div>
