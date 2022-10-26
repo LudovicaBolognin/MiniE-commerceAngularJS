@@ -6,7 +6,7 @@ const detailsController = function ($scope, productsService, $routeParams, $loca
   this.loadProduct = async () => {
     const response = await productsService.getProducts();
     this.productsArray = response.products;
-    this.product = this.productsArray.filter(ele => ele.id === +$routeParams.id);
+    this.product = this.productsArray.filter(ele => ele.id === parseInt($routeParams.id));
     $scope.$apply();
   }
 
