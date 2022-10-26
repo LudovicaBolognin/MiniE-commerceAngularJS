@@ -3,14 +3,17 @@
   angular.module("MiniECommerce", ["ngRoute"])
     .config(function ($routeProvider) {
       $routeProvider
-        .when("/", {
+        .when("/products", {
           template: "<products></products>"
         })
-        .when("/:id", {
-          template: "<details></details>"
+        .when("/products/:id/details", {
+          template: "<detail></detail>"
+        })
+        .when("/products/cart", {
+          template: "<cart></cart>"
         })
         .otherwise({
-          redirectTo: "/"
+          redirectTo: "/products"
         })
     });
 })(window.angular);
