@@ -1,17 +1,17 @@
 const cartController = function ($scope, cartService) {
-  this.finalCart = [];
+  this.cart = [];
   this.totalPrice = 0;
 
   this.$onInit = () => {
-    this.finalCart = cartService.cart;
-    for (let i = 0; i < this.finalCart.length; i++) {
-      this.totalPrice += this.finalCart[i].price;
+    this.cart = cartService.cart;
+    for (let i = 0; i < this.cart.length; i++) {
+      this.totalPrice += this.cart[i].price;
     }
   };
 
   this.onCompleteOrder = () => {
     cartService.emptyCart();
-    this.finalCart = cartService.cart;
+    this.cart = cartService.cart;
     this.totalPrice = 0;
   };
 

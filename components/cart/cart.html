@@ -14,7 +14,7 @@
         <tr ng-if="!$ctrl.totalPrice">
             <td colspan="3" class="text-center"><i>Empty Cart</i></td>
         </tr>
-        <tr ng-repeat="item in $ctrl.finalCart track by $index">
+        <tr ng-repeat="item in $ctrl.cart track by $index">
             <td>{{$index+1}}</td>
             <td>{{item.name | uppercase}}</td>
             <td>{{item.price | currency}}</td>
