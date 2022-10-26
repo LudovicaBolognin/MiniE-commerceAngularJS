@@ -1,4 +1,4 @@
-const detailsController = function ($scope, productsService, $routeParams, $location) {
+const detailsController = function ($scope, productsService, $routeParams, $location, cartService) {
 
   this.productsArray = [];
   this.product = [];
@@ -18,7 +18,7 @@ const detailsController = function ($scope, productsService, $routeParams, $loca
     $location.path(`products`);
   }
 
-  this.onAddToCart = () => {
-    //need to create a cart service
+  this.onAddToCart = (item) => {
+    cartService.addToCart(item);
   }
 }
