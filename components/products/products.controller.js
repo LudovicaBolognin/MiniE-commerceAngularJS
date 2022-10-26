@@ -12,7 +12,7 @@ const productsController = function ($scope, productsService, $location) {
   };
 
   this.goToDetails = (id) => {
-    $location.path(`/${id}`);
+    $location.path(`products/${id}/details`);
   };
 
 };
