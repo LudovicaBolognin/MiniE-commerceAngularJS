@@ -11,7 +11,7 @@ const productsController = function ($scope, productsService, $location) {
     this.getAllProducts();
   };
 
-  this.goToDetails = (id) => {
+  this.onDetails = (id) => {
     $location.path(`products/${id}/details`);
   };
 
