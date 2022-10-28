@@ -15,9 +15,22 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" ng-click="$ctrl.onBack()">Go
                     Back
                 </button>
-                <button type="button" class="btn btn-primary" ng-click="$ctrl.onAddToCart($ctrl.product[0])">Add
+                <button id="liveToastBtn" type="button" class="btn btn-primary"
+                        ng-click="$ctrl.onAddToCart($ctrl.product[0])">Add
                     to Cart
                 </button>
+            </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Success</strong>
+                    <small>First add: {{$ctrl.interval}} seconds ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    You add a new {{$ctrl.product[0].name}} into your cart.
+                </div>
             </div>
         </div>
     </div>
