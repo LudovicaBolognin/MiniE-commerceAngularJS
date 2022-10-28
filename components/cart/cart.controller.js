@@ -1,17 +1,22 @@
 const cartController = function ($scope, cartService) {
-  this.cart = [];
+  this.cartProducts = [];
   this.totalPrice = 0;
 
   this.$onInit = () => {
-    this.cart = cartService.cart;
-    for (let i = 0; i < this.cart.length; i++) {
-      this.totalPrice += this.cart[i].price;
-    }
+    this.cartSub = cartService.cartObs.subscribe(productsArray => {
+      this.cartProducts = productsArray;
+      for (let i = 0; i < this.cartProducts.length; i++) {
+        this.totalPrice += this.cartProducts[i].price;
+      }
+    });
   };
+
+  this.$onDestroy = () => {
+    this.cartSub.unsubscribe();
+  }
 
   this.onCompleteOrder = () => {
     cartService.emptyCart();
-    this.cart = cartService.cart;
     this.totalPrice = 0;
   };
 
