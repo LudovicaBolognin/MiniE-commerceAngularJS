@@ -11,7 +11,6 @@ const detailsController = function ($scope, productsService, $routeParams, $loca
 
   this.$onInit = () => {
     this.loadProduct();
-    this.startCounting = (new Date()).getSeconds();
   }
 
   this.onBack = () => {
