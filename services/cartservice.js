@@ -1,16 +1,18 @@
 (function (angular) {
   angular.module("MiniECommerce")
     .service("cartService", function () {
-      this.cart = [];
-
-      //add subject for cart.length
+      this._cartArray = [];
+      this._cartSubject = new rxjs.BehaviorSubject(this._cartArray);
+      this.cartObs = this._cartSubject.asObservable();
 
       this.addToCart = (product) => {
-        this.cart = [...this.cart, product];
+        this._cartArray.push(product);
+        this._cartSubject.next(this._cartArray);
       };
 
       this.emptyCart = () => {
-        this.cart = [];
+        this._cartArray = [];
+        this._cartSubject.next(this._cartArray);
       };
     })
 })(window.angular);
