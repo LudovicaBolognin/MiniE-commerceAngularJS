@@ -1,8 +1,6 @@
 const detailsController = function ($scope, productsService, $routeParams, $location, cartService) {
   this.productsArray = [];
   this.product = [];
-  this.startCounting = null;
-  this.interval = null;
 
   this.loadProduct = async () => {
     const response = await productsService.getProducts();
@@ -28,11 +26,5 @@ const detailsController = function ($scope, productsService, $routeParams, $loca
   this.showToast = () => {
     let toast = document.querySelector('.toast');
     new bootstrap.Toast(toast).show();
-    this.counting();
-  }
-
-  this.counting = () => {
-    let seconds = new Date().getSeconds();
-    this.interval = seconds - this.startCounting;
   }
 }
